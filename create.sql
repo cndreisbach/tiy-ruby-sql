@@ -16,9 +16,10 @@ CREATE TABLE instructors (
 
 CREATE TABLE courses (
     id INTEGER PRIMARY KEY AUTOINCREMENT,
-    location_id INTEGER NOT NULL REFERENCES location(id),
+    location_id INTEGER NOT NULL REFERENCES locations(id),
     curriculum_id INTEGER NOT NULL REFERENCES curricula(id),
     instructor_id INTEGER REFERENCES instructors(id),
+    backup_instructor_id INTEGER REFERENCES instructors(id),
     start_date DATE NOT NULL
 );
 
